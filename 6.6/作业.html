@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 一. 使用var声明变量的特点，为什么使用let声明变量
+    在 JavaScript 的早期版本中，使用 var 声明变量是唯一的方式。然而，由于 var 存在一些特点，使得在 ES6 中引入了 let 和 const 这两个新的声明变量的方式。
+    var 声明变量的特点如下：
+        变量提升：使用 var 声明的变量会被提升到函数或全局作用域的顶部，即使变量的声明在使用之前也会被提升。
+        作用域：使用 var 声明的变量的作用域是函数作用域或全局作用域，而不是块级作用域。这意味着变量在整个函数或全局范围内都是可见的。
+
+        可重复声明：使用 var 声明的变量可以被重复声明多次，而不会引发错误。
+        
+        由于 var 存在这些特点，可能会导致一些意外的行为，比如变量提升和作用域问题可能会导致代码难以理解和维护，而可重复声明可能会引发错误。
+
+相比之下，let 声明变量的特点如下：
+    块级作用域：使用 let 声明的变量的作用域是块级作用域，即只在声明的块内有效。
+    不存在变量提升：使用 let 声明的变量不会被提升到作用域的顶部，而是在声明的位置被创建。
+    不可重复声明：使用 let 声明的变量只能被声明一次，重复声明会导致错误。
+    因此，使用 let 声明变量可以避免一些潜在的问题，使代码更加可读、可维护和可靠。 -->
+
+    <script>
+        // 四
+        // console.log(fn);
+        //     if (1 == 1) {
+        //         console.log(fn); //函数
+
+        //         function fn() {
+        //             console.log("ok");  //ok
+        //         }
+        //     }
+        //     console.log(fn);  //  ok
+
+        // 五
+        // console.log(num);  //und
+        //     console.log(fn);  //und
+        //     if ([]) {
+
+        //         fn()
+        //         var num = 100;
+
+        //         function fn() {
+        //             console.log("a")  //a
+        //         }
+        //     }
+        //     console.log(fn);  //函数
+
+        // 六
+        // function fn(i) {
+        //         return function (n) {
+        //             console.log(n + (++i));
+        //         }
+        //     }
+        //     var f = fn(2);
+        //     f(3);
+        //     fn(5)(6);
+        //     fn(7)(8);
+        //     f(4)                        //不会
+
+        // 七
+        // var foo = "hello";
+        //     (function (foo) {
+        //         console.log(foo);    //hello
+        //         var foo = foo || "word";
+        //         console.log(foo);   //hello
+        //     })(foo);
+        //     console.log(foo);    //hello
+
+        // 八
+        // var a = 9;
+        //     function fn() {
+        //         a = 0;
+        //         return function (b) {
+        //             return b + a++;
+        //         }
+        //     }
+        //     var f = fn();
+        //     console.log(f(5));   
+        //     console.log(fn()(5));
+        //     console.log(f(5));
+        // console.log(a);    //不会
+
+        // 九
+        // let obj = {
+        //     x: 1,
+        //     y: [10, 20]
+        // };
+        // let obj2 = obj;
+        // let obj3 = {
+        //     ...obj2
+        // };
+        // obj2.x = 100;
+        // obj2.y[1] = 30;
+        // obj3.x = 200;
+        // obj3.y[2] = 40;
+        // obj = obj3.y = {
+        //     x: 0,
+        //     y: [1, 2]
+        // };
+        // console.log(obj, obj2, obj3);    //不会
+
+        // 十
+        // let a = ? ;
+        // if (a == 1 && a == 2 && a == 3) {
+        //     console.log('OK');
+        // }   不会
+
+        // 十一
+        // let arr = [12.5, 100, 0013, '27px', 456];
+        // arr = arr.map(parseInt); 
+        // console.log(arr);  //  不会
+
+        // 十二
+        var b = 10;
+        (function b() {
+            b = 20;
+            console.log(b);  //20
+        })();
+        console.log(b);  //20
+    </script>
+</body>
+
+</html>
