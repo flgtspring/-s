@@ -52,16 +52,16 @@
         //     console.log(fn);  //函数
 
         // 六
-        // function fn(i) {
-        //         return function (n) {
-        //             console.log(n + (++i));
-        //         }
-        //     }
-        //     var f = fn(2);
-        //     f(3);
-        //     fn(5)(6);
-        //     fn(7)(8);
-        //     f(4)                        //不会
+        function fn(i) {
+                return function (n) {
+                    console.log(n + (++i));
+                }
+            }
+            var f = fn(2);
+            f(3);
+            fn(5)(6);
+            fn(7)(8);
+            f(4)                        //不会
 
         // 七
         // var foo = "hello";
@@ -117,12 +117,12 @@
         // console.log(arr);  //  不会
 
         // 十二
-        var b = 10;
-        (function b() {
-            b = 20;
-            console.log(b);  //20
-        })();
-        console.log(b);  //20
+        // var b = 10;
+        // (function b() {
+        //     b = 20;
+        //     console.log(b);  //20
+        // })();
+        // console.log(b);  //20
     </script>
 </body>
 
